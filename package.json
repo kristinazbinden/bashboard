@@ -2,7 +2,7 @@
   "name": "sei-project-2",
   "version": "1.0.0",
   "engines": {
-      "node": "12.11.0"
+    "node": "12.11.0"
   },
   "description": "",
   "main": "server.js",
