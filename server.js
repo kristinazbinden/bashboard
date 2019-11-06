@@ -48,6 +48,13 @@ app.get('/', (req, res) => {
     })
 });
 
+
+//This is our new route, a CREATE Route
+app.get('/new', (req, res) => {
+    res.render('logs/new.ejs');
+})
+
+
 //create path to mongodb
 
 mongoose.connect('mongodb://localhost:27017/bashboard', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }, () => {
