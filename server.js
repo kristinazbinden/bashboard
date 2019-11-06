@@ -82,6 +82,15 @@ app.get('/', (req, res) => {
     })
 });
 
+//this is our PATCH route
+app.patch('/:id', (req, res) => {
+    List.findByIdAndUpdate(req.params.id, req.body, {new:true},
+    (err, task) => {
+        task.completed = true;
+        task.save();
+        res.redirect('/'+req.params.id)
+    })
+})
 
 //create path to mongodb
 
@@ -95,3 +104,14 @@ mongoose.connect('mongodb://localhost:27017/bashboard', { useNewUrlParser: true,
 app.listen(PORT, () => {
     console.log('Listening on port:', PORT);
 })
+
+
+
+// =======================
+// Code Graveyard
+// =======================
+//
+// This was used in index.ejs to update text when task was marked as completed or not completed
+// <%# <%if(tasks[i].completed == false){%>Not Completed <%} else {%>
+//     Task Completed
+// <%}%> %>

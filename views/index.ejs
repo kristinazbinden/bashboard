@@ -10,9 +10,12 @@
             <%for(let i = 0; i < tasks.length; i++){%>
                 <li>
                     <a href="/<%=tasks[i].id; %>"><%=tasks[i].title%></a><br>
-                    <%if(tasks[i].completed == false){%>Not Completed <%} else {%>
-                        Task Completed
-                    <%}%>
+
+                    <form action="/<%=tasks[i].id; %>?_method=PATCH" method="POST">
+                        <input type="submit" value="MARK DONE">
+                    </form>
+
+
                 </li>
             <%}%>
         </ul>
