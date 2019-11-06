@@ -40,13 +40,18 @@ app.use(methodOverride('_method')); //allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 
+//This is our new route
+app.get('/new', (req, res) => {
+    res.render('new.ejs');
+})
+
 //This is our SHOW route, a READ route
 app.get('/:id', (req, res) => {
     List.findById(req.params.id, (error, foundTask) => {
         res.render(
             'show.ejs',
             {
-                task:foundTask
+                task : foundTask,
             }
         );
     });
@@ -67,6 +72,7 @@ app.post('/', (req, res) => {
 })
 
 
+
 //This is our index route, a READ route
 app.get('/', (req, res) => {
     List.find({}, (err, allTasks) => {
@@ -75,12 +81,6 @@ app.get('/', (req, res) => {
         })
     })
 });
-
-
-//This is our new route
-app.get('/new', (req, res) => {
-    res.render('new.ejs');
-})
 
 
 //create path to mongodb
