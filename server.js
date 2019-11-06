@@ -39,6 +39,21 @@ app.use(methodOverride('_method')); //allow POST, PUT and DELETE from a form
 //___________________
 // Routes
 //___________________
+
+//This is our CREATE route
+app.post('/', (req, res) => {
+    // find out why this isn't working if snippet below is commented out
+    if(req.body.shipIsBroken === 'on'){
+        req.body.shipIsBroken = true;
+    } else {
+        req.body.shipIsBroken = false;
+    }
+    List.create(req.body, (err, createdList) => {
+        res.redirect('/');
+    });
+})
+
+
 //This is our index route, a READ route
 app.get('/', (req, res) => {
     List.find({}, (err, allTasks) => {
@@ -49,7 +64,7 @@ app.get('/', (req, res) => {
 });
 
 
-//This is our new route, a CREATE Route
+//This is our new route
 app.get('/new', (req, res) => {
     res.render('logs/new.ejs');
 })
