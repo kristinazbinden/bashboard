@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+            <h2> <%=task.title; %></h2></br>
+                <p><%=task.description; %></p></br>
+            <h2>Task Completed:</h2>
+        <% if(task.completed === false){ %>
+            Not Completed
+        <% } else { %>
+            All Done!ß
+        <% } %>
+        <nav>
+            <a href="/">Back To List</a>
+        </nav>
+    </body>
+</html>

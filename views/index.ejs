@@ -9,8 +9,10 @@
         <ul>
             <%for(let i = 0; i < tasks.length; i++){%>
                 <li>
-                    <a href="#"><%=tasks[i].title%></a><br>
-                    <%=tasks[i].completed %>
+                    <a href="/<%=tasks[i].id; %>"><%=tasks[i].title%></a><br>
+                    <%if(tasks[i].completed == false){%>Not Completed <%} else {%>
+                        Task Completed
+                    <%}%>
                 </li>
             <%}%>
         </ul>

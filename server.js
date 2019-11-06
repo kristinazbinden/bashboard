@@ -40,6 +40,19 @@ app.use(methodOverride('_method')); //allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 
+//This is our SHOW route, a READ route
+app.get('/:id', (req, res) => {
+    List.findById(req.params.id, (error, foundTask) => {
+        res.render(
+            'show.ejs',
+            {
+                task:foundTask
+            }
+        );
+    });
+});
+
+
 //This is our CREATE route
 app.post('/', (req, res) => {
     // find out why this isn't working if snippet below is commented out
