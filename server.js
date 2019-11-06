@@ -66,7 +66,7 @@ app.get('/', (req, res) => {
 
 //This is our new route
 app.get('/new', (req, res) => {
-    res.render('logs/new.ejs');
+    res.render('new.ejs');
 })
 
 
