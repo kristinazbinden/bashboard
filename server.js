@@ -43,10 +43,10 @@ app.use(methodOverride('_method')); //allow POST, PUT and DELETE from a form
 //This is our CREATE route
 app.post('/', (req, res) => {
     // find out why this isn't working if snippet below is commented out
-    if(req.body.shipIsBroken === 'on'){
-        req.body.shipIsBroken = true;
+    if(req.body.completed === 'on'){
+        req.body.completed = true;
     } else {
-        req.body.shipIsBroken = false;
+        req.body.completed = false;
     }
     List.create(req.body, (err, createdList) => {
         res.redirect('/');
