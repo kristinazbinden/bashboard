@@ -5,6 +5,14 @@
         <title></title>
     </head>
     <body>
-        Tasks
+        <h1>Tasks</h1>
+        <ul>
+            <%for(let i = 0; i < tasks.length; i++){%>
+                <li>
+                    <a href="#"><%=tasks[i].title%></a>
+                </li>
+            <%}%>
+        </ul>
+
     </body>
 </html>

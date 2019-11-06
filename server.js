@@ -7,6 +7,7 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
+const List = require('./models/tasks.js')
 
 //___________________
 //Port
@@ -38,9 +39,13 @@ app.use(methodOverride('_method')); //allow POST, PUT and DELETE from a form
 //___________________
 // Routes
 //___________________
-//localhost:3000
+//This is our index route, a READ route
 app.get('/', (req, res) => {
-    res.render('index.ejs')
+    List.find({}, (err, allTasks) => {
+        res.render('index.ejs', {
+            tasks: allTasks
+        })
+    })
 });
 
 //create path to mongodb
