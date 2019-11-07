@@ -1,0 +1,18 @@
+/* Color Scheme */
+:root {
+    --blue: '#19367A';
+    --orange: '#FCA037';
+    --salmon: '#FF5E5B';
+    --almond: '#FFEDD1';
+    --purple: '#40255B';
+}
+
+body {
+    background-color: #40255B;
+    color: #FCA037;
+    font-size: 22px;
+}
+
+a {
+    color: #FF5E5B;
+}

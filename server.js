@@ -27,13 +27,14 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //___________________
 //Middleware
 //___________________
-//use public folder for static assets
-app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //use method override
 app.use(methodOverride('_method')); //allow POST, PUT and DELETE from a form
+
+// Middleware four our CSS
+app.use('/public', express.static('public'));
 
 //set the home page
 app.get('/', (req, res) => {
