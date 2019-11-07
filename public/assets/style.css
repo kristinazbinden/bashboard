@@ -1,18 +1,38 @@
 /* Color Scheme */
 :root {
-    --blue: '#19367A';
-    --orange: '#FCA037';
-    --salmon: '#FF5E5B';
-    --almond: '#FFEDD1';
-    --purple: '#40255B';
+    --blue: #19367A;
+    --orange: #FCA037;
+    --salmon: #FF5E5B;
+    --almond: #FFEDD1;
+    --purple: #40255B;
+    --work-sans:  'Work Sans', sans-serif;
+    --lato: 'Lato', sans-serif;
 }
 
+/* Defining colors */
 body {
-    background-color: #40255B;
-    color: #FCA037;
+    background-color: var(--purple);
+    color: var(--orange);
     font-size: 22px;
 }
 
 a {
-    color: #FF5E5B;
+    color: var(--salmon);
 }
+
+/* Defining fonts */
+
+h1, h2 {
+    font-family: var(--work-sans)
+}
+
+p, a {
+    font-family: var(--lato)
+
+
+/* Styling buttons, forms and links */
+button {
+
+}
+
+/* Divs and Layouts */
