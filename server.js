@@ -45,6 +45,23 @@ app.get('/new', (req, res) => {
     res.render('new.ejs');
 })
 
+
+//This is our edit route
+app.get('/:id/edit', (req, res) => {
+    List.findById(req.params.id, (err, foundTask) => {
+        res.render('edit.ejs', {
+            task: foundTask
+        })
+    })
+})
+
+//This is our delete route
+app.delete('/:id', (req, res) => {
+    List.findByIdAndRemove(req.params.id, (err, data) => {
+        res.redirect('/');
+    })
+})
+
 //This is our SHOW route, a READ route
 app.get('/:id', (req, res) => {
     List.findById(req.params.id, (error, foundTask) => {
@@ -81,6 +98,18 @@ app.get('/', (req, res) => {
         })
     })
 });
+
+//this is our PUT route
+app.put('/:id', (req, res) => {
+    if(req.body.completed === 'on'){
+        req.body.completed = true;
+    } else {
+        req.body.completed = false;
+    }
+    List.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updateTask)=>{
+        res.redirect('/'+req.params.id)
+    })
+})
 
 //this is our PATCH route
 app.patch('/:id', (req, res) => {
