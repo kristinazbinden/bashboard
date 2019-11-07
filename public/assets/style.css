@@ -31,11 +31,16 @@ h1, h2 {
     font-family: var(--work-sans);
 }
 h1 {
-    font-size: 48px;
+    font-size: 400%;
+}
+
+h2 {
+    font-size: 300%;
 }
 
 p, a {
     font-family: var(--lato)
+    font-size: 200%;
 }
 
 /* Styling buttons, forms and links */
@@ -47,6 +52,8 @@ div {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    height: 50vh;
+    text-align: center;
 }
 
 #welcome {
@@ -56,6 +63,7 @@ div {
     border-radius: 20px;
     text-decoration: none;
     text-transform: capitalize;
+    font-size: 200%;
 }
 
 img {
