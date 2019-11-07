@@ -7,7 +7,6 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
-const List = require('./models/tasks.js')
 
 //___________________
 //Port
@@ -36,90 +35,14 @@ app.use(express.json());
 //use method override
 app.use(methodOverride('_method')); //allow POST, PUT and DELETE from a form
 
-//___________________
-// Routes
-//___________________
-
-//This is our new route
-app.get('/new', (req, res) => {
-    res.render('new.ejs');
-})
-
-
-//This is our edit route
-app.get('/:id/edit', (req, res) => {
-    List.findById(req.params.id, (err, foundTask) => {
-        res.render('edit.ejs', {
-            task: foundTask
-        })
-    })
-})
-
-//This is our delete route
-app.delete('/:id', (req, res) => {
-    List.findByIdAndRemove(req.params.id, (err, data) => {
-        res.redirect('/');
-    })
-})
-
-//This is our SHOW route, a READ route
-app.get('/:id', (req, res) => {
-    List.findById(req.params.id, (error, foundTask) => {
-        res.render(
-            'show.ejs',
-            {
-                task : foundTask,
-            }
-        );
-    });
-});
-
-
-//This is our CREATE route
-app.post('/', (req, res) => {
-    // find out why this isn't working if snippet below is commented out
-    if(req.body.completed === 'on'){
-        req.body.completed = true;
-    } else {
-        req.body.completed = false;
-    }
-    List.create(req.body, (err, createdList) => {
-        res.redirect('/');
-    });
-})
-
-
-
-//This is our index route, a READ route
+//set the home page
 app.get('/', (req, res) => {
-    List.find({}, (err, allTasks) => {
-        res.render('index.ejs', {
-            tasks: allTasks
-        })
-    })
-});
-
-//this is our PUT route
-app.put('/:id', (req, res) => {
-    if(req.body.completed === 'on'){
-        req.body.completed = true;
-    } else {
-        req.body.completed = false;
-    }
-    List.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updateTask)=>{
-        res.redirect('/'+req.params.id)
-    })
+    res.render('welcome.ejs');
 })
 
-//this is our PATCH route
-app.patch('/:id', (req, res) => {
-    List.findByIdAndUpdate(req.params.id, req.body, {new:true},
-    (err, task) => {
-        task.completed = true;
-        task.save();
-        res.redirect('/')
-    })
-})
+// use controller files
+const tasksController = require('./controllers/tasks.js');
+app.use('/tasks', tasksController);
 
 //create path to mongodb
 
@@ -144,3 +67,8 @@ app.listen(PORT, () => {
 // <%# <%if(tasks[i].completed == false){%>Not Completed <%} else {%>
 //     Task Completed
 // <%}%> %>
+
+
+// This is the code to include in html to make confetti falling effect
+// Taken from https://github.com/mathusummut/confetti.js
+// <script>confetti.start(2000)</script>

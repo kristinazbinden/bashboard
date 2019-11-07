@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
+        <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
         <meta charset="utf-8">
         <title></title>
     </head>
@@ -12,9 +13,9 @@
                 <%for(let i = 0; i < tasks.length; i++){%>
                     <%if(tasks[i].completed === false){%>
                         <li>
-                            <a href="/<%=tasks[i].id; %>"><%=tasks[i].title%></a><br>
+                            <a href="/tasks/<%=tasks[i].id; %>"><%=tasks[i].title%></a><br>
 
-                            <form action="/<%=tasks[i].id; %>?_method=PATCH" method="POST">
+                            <form action="/tasks/<%=tasks[i].id; %>?_method=PATCH" method="POST">
                                 <input type="submit" value="MARK DONE">
                             </form>
                         </li>
@@ -28,15 +29,15 @@
                 <%for(let i = 0; i < tasks.length; i++){%>
                     <%if(tasks[i].completed === true){%>
                         <li>
-                            <a href="/<%=tasks[i].id; %>"><%=tasks[i].title%></a><br>
+                            <a href="/tasks/<%=tasks[i].id; %>"><%=tasks[i].title%></a><br>
                         </li>
+
                     <%}%>
                 <%}%>
             </ul>
         </div>
+        <button onclick=confetti.start(5000) type="button" name="button">Mark Project Complete</button>
+        <a id="newTask" href="/tasks/new">Add New Task</a>
 
-        <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script><script>confetti.start(2000)</script>
-        <a href="/new">Add New Task</a>
-        
     </body>
 </html>

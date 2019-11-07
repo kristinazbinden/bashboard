@@ -7,6 +7,7 @@
     <body>
             <h2> <%=task.title; %></h2></br>
                 <p><%=task.description; %></p></br>
+                <p>Notes: <%=task.notes; %></p> <br>
             <h2>Task Completed:</h2>
         <% if(task.completed === false){ %>
             Not Completed
@@ -14,8 +15,8 @@
             All Done!
         <% } %>
         <nav>
-            <a href="/<%=task.id; %>/edit">Edit Task</a>
-            <a href="/">Back To List</a>
+            <a href="/tasks/<%=task.id; %>/edit">Edit Task</a>
+            <a href="/tasks">Back To List</a>
         </nav>
     </body>
 </html>
