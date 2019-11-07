@@ -6,18 +6,37 @@
     </head>
     <body>
         <h1>Tasks</h1>
-        <ul>
-            <%for(let i = 0; i < tasks.length; i++){%>
-                <li>
-                    <a href="/<%=tasks[i].id; %>"><%=tasks[i].title%></a><br>
+        <div class="to-do">
+            <h2>To Do</h2>
+            <ul>
+                <%for(let i = 0; i < tasks.length; i++){%>
+                    <%if(tasks[i].completed === false){%>
+                        <li>
+                            <a href="/<%=tasks[i].id; %>"><%=tasks[i].title%></a><br>
 
-                    <form action="/<%=tasks[i].id; %>?_method=PATCH" method="POST">
-                        <input type="submit" value="MARK DONE">
-                    </form>
-                </li>
-            <%}%>
-        </ul>
+                            <form action="/<%=tasks[i].id; %>?_method=PATCH" method="POST">
+                                <input type="submit" value="MARK DONE">
+                            </form>
+                        </li>
+                    <%}%>
+                <%}%>
+            </ul>
+        </div>
+        <div class="done">
+            <h2>Done</h2>
+            <ul>
+                <%for(let i = 0; i < tasks.length; i++){%>
+                    <%if(tasks[i].completed === true){%>
+                        <li>
+                            <a href="/<%=tasks[i].id; %>"><%=tasks[i].title%></a><br>
+                        </li>
+                    <%}%>
+                <%}%>
+            </ul>
+        </div>
+
         <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script><script>confetti.start(2000)</script>
         <a href="/new">Add New Task</a>
+        
     </body>
 </html>

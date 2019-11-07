@@ -117,7 +117,7 @@ app.patch('/:id', (req, res) => {
     (err, task) => {
         task.completed = true;
         task.save();
-        res.redirect('/'+req.params.id)
+        res.redirect('/')
     })
 })
 
