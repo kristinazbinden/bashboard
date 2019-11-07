@@ -4,7 +4,7 @@
 
 /* Color Scheme */
 :root {
-    --purple: #40255B;
+    --purple: #17103D;
     --orange: #FCA037;
     --salmon: #FF5E5B;
     --almond: #FFEDD1;
@@ -15,11 +15,10 @@
 
 /* Defining colors */
 body {
-    background: rgb(103,81,147);
-    background: linear-gradient(176deg, rgba(103,81,147,1) 0%, rgba(103,81,147,0.2921570616883117) 100%);
+    background-color: var(--purple);
 
     color: var(--orange);
-    font-size: 22px;
+    font-size: 18px;
 }
 
 a {
@@ -29,21 +28,36 @@ a {
 /* Defining fonts */
 
 h1, h2 {
-    font-family: var(--work-sans)
+    font-family: var(--work-sans);
+}
+h1 {
+    font-size: 48px;
 }
 
 p, a {
     font-family: var(--lato)
-
+}
 
 /* Styling buttons, forms and links */
-button {
-
-}
 
 /* Divs and Layouts */
 div {
+    padding: 40px;
     display: flex;
-    justify-content: center;
-    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#welcome {
+    background-color: var(--almond);
+    margin: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+img {
+    max-height: 60vh;
 }
