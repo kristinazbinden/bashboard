@@ -1,17 +1,23 @@
+*{
+    margin: 0;
+}
+
 /* Color Scheme */
 :root {
-    --blue: #19367A;
+    --purple: #40255B;
     --orange: #FCA037;
     --salmon: #FF5E5B;
     --almond: #FFEDD1;
-    --purple: #40255B;
+    --lavender: #EEE5FF;
     --work-sans:  'Work Sans', sans-serif;
     --lato: 'Lato', sans-serif;
 }
 
 /* Defining colors */
 body {
-    background-color: var(--purple);
+    background: rgb(103,81,147);
+    background: linear-gradient(176deg, rgba(103,81,147,1) 0%, rgba(103,81,147,0.2921570616883117) 100%);
+
     color: var(--orange);
     font-size: 22px;
 }
@@ -36,3 +42,8 @@ button {
 }
 
 /* Divs and Layouts */
+div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
