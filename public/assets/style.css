@@ -47,12 +47,9 @@ p, a {
 
 /* Divs and Layouts */
 div {
-    padding: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
-    height: 50vh;
     text-align: center;
 }
 
@@ -66,6 +63,74 @@ div {
     font-size: 200%;
 }
 
+.index h1 {
+    font-size: 300%;
+    margin-top: 40px;
+}
+
+.index h2 {
+    font-size: 250%;
+    margin-top: 20px;
+}
+
+.index a {
+    text-decoration: none;
+    font-family: var(--lato);
+    font-size: 22px;
+}
+
+.index a:hover {
+    animation: bounce 1s;
+}
+
+.index ul {
+    list-style: none;
+    padding: 5px;
+}
+
+.index li {
+    margin-top: 15px;
+}
+
 img {
     max-height: 60vh;
+}
+
+
+/* keyframes */
+/* This is a cool hover effect I found from https://codepen.io/davidicus/pen/emgQKJ */
+a {
+    letter-spacing: 0;
+}
+
+a:hover,
+a:active {
+  letter-spacing: 5px;
+}
+
+a:after,
+a:before {
+  backface-visibility: hidden;
+  border: 1px solid rgba(#fff, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+a:hover:after,
+a:hover:before {
+  backface-visibility: hidden;
+  border-color: #fff;
+  transition: width 350ms ease-in-out;
+  width: 70%;
+}
+
+a:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 70%;
 }
