@@ -58,11 +58,15 @@ router.post('/', (req, res) => {
 
 //This is our index route, a READ route
 router.get('/', (req, res) => {
-    List.find({}, (err, allTasks) => {
-        res.render('tasks/index.ejs', {
-            tasks: allTasks
+    if(req.session.username){
+        List.find({}, (err, allTasks) => {
+            res.render('tasks/index.ejs', {
+                tasks: allTasks
+            })
         })
-    })
+    } else {
+        res.redirect('/');
+    }
 });
 
 //this is our PATCH route
