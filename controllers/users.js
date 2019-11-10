@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
     bcrypt.genSaltSync(9));
     User.create(req.body, (err, createdUser) => {
         req.session.username = createdUser.username,
-        console.log(createdUser),
+        currentUser = createdUser
         res.redirect('/');
     })
 })

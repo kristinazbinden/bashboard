@@ -16,6 +16,8 @@ router.post('/', (req, res) => {
             bcrypt.compareSync(req.body.password, foundUser.password)
             if(passwordMatch) {
                 req.session.username = foundUser.username;
+                req.session.userId = foundUser._id;
+                req.session.tasks = foundUser.tasks;
                 res.redirect('/tasks');
             } else {
                 res.send('Sorry, this password doesn\'t match our records');

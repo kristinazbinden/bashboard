@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
+const List = require('./tasks.js')
 
 const userSchema = new mongoose.Schema({
     username:  { type: String, required:true },
     password: { type: String, required:true } ,
+    tasks:  [
+        List.schema
+    ]
 });
 
 const User = mongoose.model('User', userSchema);
