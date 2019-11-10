@@ -84,11 +84,10 @@ app.listen(PORT, () => {
 //     Task Completed
 // <%}%> %>
 
+// Background Photo by Karina on Unsplash
 
 // This is the code to include in html to make confetti falling effect
 // Taken from https://github.com/mathusummut/confetti.js
 // <script>confetti.start(2000)</script>
-
-// The vector images were taken from unDraw.co and edited using Canva
 
 // The name 'BashBoard' is credited to Joseph Jambor
