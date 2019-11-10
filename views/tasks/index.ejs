@@ -5,38 +5,44 @@
     </head>
     <body>
         <div class="index">
-            <h1>Hi, <%=user%>.</h1>
-            <div class="to-do">
-                <h2>To Do</h2>
-                <ul>
-                    <%for(let i = 0; i < tasks.length; i++){%>
-                        <%if(tasks[i].completed === false){%>
-                            <li>
-                                <a href="/tasks/<%=tasks[i].id; %>"><%=tasks[i].title%></a><br>
-
-                                <form action="/tasks/<%=tasks[i].id; %>?_method=PATCH" method="POST">
-                                    <input type="submit" value="MARK DONE">
-                                </form>
-                            </li>
-                        <%}%>
-                    <%}%>
-                </ul>
+            <div class="indexHeader">
+                <h1><%=user%>'s task list.</h1>
             </div>
-            <div class="done">
-                <h2>Done</h2>
-                <ul>
-                    <%for(let i = 0; i < tasks.length; i++){%>
-                        <%if(tasks[i].completed === true){%>
-                            <li>
-                                <a href="/tasks/<%=tasks[i].id; %>"><%=tasks[i].title%></a><br>
-                            </li>
+            <div class="columns">
+                <div class="to-do">
+                    <h2>To Do</h2>
+                    <ul>
+                        <%for(let i = 0; i < tasks.length; i++){%>
+                            <%if(tasks[i].completed === false){%>
+                                <li>
+                                    <a href="/tasks/<%=tasks[i].id; %>"><%=tasks[i].title%></a><br>
 
+                                    <form action="/tasks/<%=tasks[i].id; %>?_method=PATCH" method="POST">
+                                        <input type="submit" value="MARK DONE">
+                                    </form>
+                                </li>
+                            <%}%>
                         <%}%>
-                    <%}%>
-                </ul>
+                    </ul>
+                </div>
+                <div class="done">
+                    <h2>Done</h2>
+                    <ul>
+                        <%for(let i = 0; i < tasks.length; i++){%>
+                            <%if(tasks[i].completed === true){%>
+                                <li>
+                                    <a href="/tasks/<%=tasks[i].id; %>"><%=tasks[i].title%></a><br>
+                                </li>
+
+                            <%}%>
+                        <%}%>
+                    </ul>
+                </div>
             </div>
-            <button onclick=confetti.start(3000) type="button" name="button">Mark Project Complete</button><br>
-            <a id="newTask" href="/tasks/new">Add New Task</a>
+            <div class="footer">
+                <button onclick=confetti.start(3000) type="button" name="button">Mark Project Complete</button><br>
+                <a id="newTask" href="/tasks/new">Add New Task</a>
+            </div>
         </div>
     </body>
 </html>
