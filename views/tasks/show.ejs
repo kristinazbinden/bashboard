@@ -4,18 +4,36 @@
         <% include ../partials/head.ejs %>
     </head>
     <body>
-            <h2> <%=task.title; %></h2></br>
-                <p><%=task.description; %></p></br>
-                <p>Notes: <%=task.notes; %></p> <br>
-            <h2>Task Completed:</h2>
-        <% if(task.completed === false){ %>
-            Not Completed
-        <% } else { %>
-            All Done!
-        <% } %>
-        <nav>
-            <a href="/tasks/<%=task.id; %>/edit">Edit Task</a>
-            <a href="/tasks">Back To List</a>
-        </nav>
+        <div class="card w-50 text-center" style="width: 18rem;">
+            <div class="card-body">
+                <h2 class="card-title"><%=task.title; %></h2>
+                <form action="/tasks" method="post">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <%=task.description; %>
+                        </li>
+                        <li class="list-group-item">
+                            Notes: <%=task.notes; %>
+                        </li>
+                        <li class="list-group-item">
+                            <h4>Task Completed:</h4>
+                        <% if(task.completed === false){ %>
+                            Not Completed
+                        <% } else { %>
+                            All Done!
+                        <% } %>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="/tasks/<%=task.id; %>/edit" class="btn btn-light">Edit Task</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="/tasks" class="btn btn-light">Back To List</a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+
+            <% include ../partials/bootstrap.ejs %>
     </body>
 </html>

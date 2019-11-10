@@ -5,21 +5,42 @@
         <% include ../partials/head.ejs %>
     </head>
     <body>
-            <h1 class="edit">Edit This Task</h1>
-            <form action="/tasks/<%=task.id%>?_method=PUT" method="POST">
-                Title: <input type="text" name="title" value="<%=task.title%>"><br/>
-                Details: <input type="textarea" name="description"  value="<%=task.description%>"><br/>
-                Notes: <br> <input type="textarea" name="notes" value="<%=task.notes%>"> <br>
-                Completed:
-                <input type="checkbox" name="completed"
-                <% if(task.completed === true){ %>
-                    checked
-                <% } %>>
-                <br><br>
-                <input type="submit" value="Make Changes"/>
-            </form>
-            <form action="/tasks/<%=task.id; %>?_method=DELETE" method= "POST">
-                <input type="submit" value="Remove Task"/>
-            </form>
+        <div class="card w-50 text-center" style="width: 18rem;">
+            <div class="card-body">
+                <h2 class="card-title">Edit This Task</h2>
+                <form action="/tasks/<%=task.id%>?_method=PUT" method="POST">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            Title: <input type="text" name="title" value="<%=task.title%>">
+                        </li>
+                        <li class="list-group-item">
+                            Details: <input type="textarea" name="description"  value="<%=task.description%>">
+                        </li>
+                        <li class="list-group-item">
+                            Notes: <br> <input type="textarea" name="notes" value="<%=task.notes%>">
+                        </li>
+                        <li class="list-group-item">
+                            Completed:
+                            <input type="checkbox" name="completed"
+                            <% if(task.completed === true){ %>
+                                checked
+                            <% } %>>
+                        <li class="list-group-item">
+                            <input type="submit" class="btn btn-light" value="Make Changes"/>
+                        </li>
+                        <li class="list-group-item">
+                            <form action="/tasks/<%=task.id; %>?_method=DELETE" method= "POST">
+                                <input type="submit" class="btn btn-light" value="Remove Task"/>
+                            </form>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="/tasks" class="btn btn-light">Back To List</a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+
+                <% include ../partials/bootstrap.ejs %>
     </body>
 </html>
