@@ -3,12 +3,14 @@
     <head>
         <% include ../partials/head.ejs %>
     </head>
-    <body>
-        <h1>Take stock of your tasks with BashBoard!</h1>
-        <form class="" action="/users" method="post">
-            Username: <input type="text" name="username" value=""><br>
-            Password: <input type="password" name="password" value=""><br>
-            <input type="submit" name="" value="Sign Up">
-        </form>
+    <body id="newUser">
+        <div class="right">
+            <h1>Take stock of your tasks with BashBoard!</h1>
+            <form class="" action="/users" method="post">
+                Username: <input type="text" name="username" value=""><br>
+                Password: <input type="password" name="password" value=""><br>
+                <input type="submit" name="" value="Sign Up">
+            </form>
+        </div>
     </body>
 </html>
