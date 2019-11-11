@@ -27,6 +27,7 @@ router.get('/:id/edit', (req, res) => {
 //This is our delete route
 router.delete('/:id', (req, res) => {
     List.findByIdAndRemove(req.params.id, (err, foundTask)=>{
+        console.log(foundTask);
         User.findOne({ 'tasks._id' : req.params.id }, (err, foundUser) => {
             foundUser.tasks.id(req.params.id).remove();
             foundUser.save((err, data) => {
@@ -120,7 +121,6 @@ router.put('/:id', (req, res) => {
 router.get('/', (req, res) => {
     if(req.session.username){
         User.findById(req.session.userId, (err, foundUser) => {
-            console.log(foundUser);
             res.render('tasks/index.ejs', {
                 tasks: foundUser.tasks,
                 user: foundUser.username,
