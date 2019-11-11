@@ -14,6 +14,10 @@ form {
     max-width: 70vw;
 }
 
+a {
+    color: var(--white);
+}
+
 .list-group-item {
     background-color: inherit !important;
 }
@@ -29,6 +33,8 @@ h2 {
 
 .card {
     background-color: rgba(0, 0, 0, 0.4) !important;
+    margin: 0 auto;
+    margin-top: 30px;
 }
 
 .footer {
@@ -98,7 +104,7 @@ h2 {
 
 /* New User Create Page */
 
-.sessions {
+.sessions, .edit {
     background-image: url('/public/assets/images/BashBoardRight.png');
     background-repeat: no-repeat;
     display: flex;
@@ -114,7 +120,7 @@ h2 {
 /* Login Page */
 
 
-.new {
+.new, .show {
     background-image: url('/public/assets/images/BashBoardLeft.png');
     background-repeat: no-repeat;
     display: flex;
@@ -156,6 +162,28 @@ h2 {
     width: 100vw;
 }
 
+/* Task Pages */
+.banner {
+    margin-top: -50px;
+}
+
+.newBtn {
+    background-color: rgba(156,3,131,.6);
+    padding: 5px;
+    margin: 10px 350px;
+    display: flex;
+    justify-content: center;
+}
+
+.list-group-item {
+    background-color: rgba(156,3,131,.6) !important;
+    padding: 5px;
+}
+
+.badge {
+    background-color: black;
+    border: none;
+}
 
 /* For Small Screens */
 form {

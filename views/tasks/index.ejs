@@ -20,13 +20,9 @@
                                     <%if(tasks[i].completed === false){%>
                                         <li class="list-group-item">
                                             <a href="/tasks/<%=tasks[i].id; %>" class="btn"><%=tasks[i].title%></a><br>
-
-                                            <span class="badge badge-pill">
                                                 <form action="/tasks/<%=tasks[i].id; %>?_method=PATCH" method="POST">
                                                     <input type="submit" value="MARK DONE">
                                                 </form>
-                                            </span>
-
                                         </li>
                                     <%}%>
                                 <%}%>
@@ -54,8 +50,8 @@
                     </div>
                 </div>
             </div>
-            <div class="navbar">
-                <a id="newTask" href="/tasks/new">Add New Task</a>
+            <div class="newBtn">
+                <a class="nav-link" href="/tasks/new">Add New Task</a>
             </div>
         </div>
             <% include ../partials/bootstrap.ejs %>
