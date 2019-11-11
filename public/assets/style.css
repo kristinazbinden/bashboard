@@ -5,13 +5,17 @@
 }
 
 form {
-    border: 2px white solid;
+    border: 2px var(--dark-pink) solid;
     padding: 20px;
     margin: 15px;
     color: var(--teal);
     display: flex;
     flex-direction: column;
-    width: 30vw;
+    max-width: 70vw;
+}
+
+.list-group-item {
+    background-color: inherit !important;
 }
 
 h1 {
@@ -60,14 +64,14 @@ h2 {
 
 .welcome h1 {
     text-shadow: -2px 1px 10px rgba(0,0,0,1);
-    font-size: 85px;
+    font-size: 8em;
     font-family: var(--marker);
     margin: 10px;
 }
 
 .welcome h2 {
     text-shadow: -2px 1px 10px rgba(0,0,0,1);
-    font-size: 42px;
+    /* font-size: 42px; */
     text-transform: lowercase;
     font-family: var(--raleway);
 }
@@ -153,8 +157,11 @@ h2 {
 }
 
 
-/* Edit Page */
+/* For Small Screens */
+form {
+    /* margin: 0 auto; */
 
+}
 /* Show Page */
 
 
