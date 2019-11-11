@@ -4,21 +4,21 @@
         <% include ./partials/head.ejs %>
     </head>
 
-    <body>
+    <body class="welcome">
         <div class="container-fluid">
             <h2>parties are fun. Planning them should be too.</h2>
 
             <h1>enter BashBoard.</h1>
-            <nav>
+            <ul class="nav justify-content-center">
                 <dl>
-                    <li>
+                    <li class="nav-item">
                         <a href="/sessions/new">Log In</a>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         <a href="/users/new">Sign Up</a>
                     </li>
                 </dl>
-            </nav>
+            </ul>
         </div>
         <% include ./partials/bootstrap.ejs %>
     </body>

@@ -120,6 +120,7 @@ router.put('/:id', (req, res) => {
 router.get('/', (req, res) => {
     if(req.session.username){
         User.findById(req.session.userId, (err, foundUser) => {
+            console.log(foundUser);
             res.render('tasks/index.ejs', {
                 tasks: foundUser.tasks,
                 user: foundUser.username,

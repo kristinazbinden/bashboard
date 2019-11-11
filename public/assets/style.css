@@ -23,6 +23,10 @@ h2 {
     color: var(--teal);
 }
 
+.card {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
 .footer {
     display: flex;
     justify-content: space-around;
@@ -42,38 +46,37 @@ h2 {
 
 
 /* Welcome Page */
-.greet {
+.welcome {
     background-image: url('/public/assets/images/BashBoard.png');
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     background-size: cover;
-    flex-direction: column;
+    text-align: center;
     height: 100vh;
-    max-width: 100vw;
+    width: 100vw;
 }
 
-.greet h1 {
+.welcome h1 {
     text-shadow: -2px 1px 10px rgba(0,0,0,1);
     font-size: 85px;
     font-family: var(--marker);
+    margin: 10px;
 }
 
-.greet h2 {
+.welcome h2 {
     text-shadow: -2px 1px 10px rgba(0,0,0,1);
     font-size: 42px;
     text-transform: lowercase;
     font-family: var(--raleway);
 }
 
-.greet ul {
+.welcome ul {
     display: flex;
     flex-direction: row;
-    list-style-type: none;
 }
-
-.greet li{
+.welcome li{
     background-color: rgba(156,3,131,.6);
     padding: 15px;
     margin: 10px;
@@ -82,7 +85,7 @@ h2 {
 
 }
 
-.greet a {
+.welcome a {
     text-decoration: none;
     text-transform: uppercase;
     font-family: var(--raleway);
@@ -91,84 +94,73 @@ h2 {
 
 /* New User Create Page */
 
-#newUser {
+.sessions {
     background-image: url('/public/assets/images/BashBoardRight.png');
     background-repeat: no-repeat;
     display: flex;
+    align-items: center;
+    justify-content: center;
     background-size: cover;
-    flex-direction: column;
+    text-align: center;
     height: 100vh;
-    max-width: 100vw;
+    width: 100vw;
 }
-
-.right {
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-    margin-right: 15%;
-    margin-top: 15%;
-}
-
-.right h1 {
-    padding-bottom: 10px;
-}
-
-
 
 
 /* Login Page */
 
-#newSession {
+
+.new {
     background-image: url('/public/assets/images/BashBoardLeft.png');
     background-repeat: no-repeat;
     display: flex;
+    align-items: center;
+    justify-content: center;
     background-size: cover;
-    flex-direction: column;
+    text-align: center;
     height: 100vh;
-    max-width: 100vw;
-}
-
-.left {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    margin-left: 15%;
-    margin-top: 15%;
-}
-
-.left h1 {
-    padding-bottom: 10px;
+    width: 100vw;
 }
 
 
 /* Index Page */
 
 .index {
-    background-image: url('/public/assets/images/BashBoard2Plain.png');
+        background-image: url('/public/assets/images/BashBoard2.png');
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        text-align: center;
+        height: 100vh;
+        width: 100vw;
+}
+
+/* newTask Page */
+
+.newTask {
+    background-image: url('/public/assets/images/BashBoard3.png');
     background-repeat: no-repeat;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-size: cover;
+    text-align: center;
     height: 100vh;
-    max-width: 100vw;
+    width: 100vw;
 }
 
-.indexHeader {
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid var(--teal);
-    padding: 20px;
-}
 
-.columns {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
+/* Edit Page */
 
-.columns h2 {
-    padding-top: 20px;
-}
+/* Show Page */
+
+
+
+
+
 
 /* Colors */
 

@@ -3,9 +3,9 @@
     <head>
         <%include ../partials/head.ejs%>
     </head>
-    <body>
+    <body class="index">
         <header role="banner">
-            <h1><%=user%>'s task list.</h1
+            <h1><%=user%>'s task list.</h1>
         </header>
         <div class="container">
             <div class="row">
@@ -55,7 +55,6 @@
                 </div>
             </div>
             <div class="navbar">
-                <button onclick=confetti.start(3000) type="button" name="button">Mark Project Complete</button><br>
                 <a id="newTask" href="/tasks/new">Add New Task</a>
             </div>
         </div>
