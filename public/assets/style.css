@@ -186,17 +186,31 @@ h2 {
 }
 
 /* For Small Screens */
+@media only screen and (max-width: 500px) {
+
+.welcome {
+    background-image: url('/public/assets/images/sm1.png');
+}
+
+.sessions, .edit {
+    background-image: url('/public/assets/images/sm4.png');
+}
+
+.new, .show {
+    background-image: url('/public/assets/images/sm5.png');
+}
+
+.index {
+        background-image: url('/public/assets/images/sm2.png');
+}
+
+.newTask {
+    background-image: url('/public/assets/images/sm3.png');
+}
+
 form {
-    /* margin: 0 auto; */
+    margin: 0 auto;
 
 }
-/* Show Page */
 
-
-
-
-
-
-/* Colors */
-
-/* Fonts */
+}
