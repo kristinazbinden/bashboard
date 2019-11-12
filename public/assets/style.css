@@ -192,6 +192,10 @@ h2 {
     background-image: url('/public/assets/images/sm1.png');
 }
 
+.welcome h1 {
+    font-size: 400%;
+}
+
 .sessions, .edit {
     background-image: url('/public/assets/images/sm4.png');
 }
