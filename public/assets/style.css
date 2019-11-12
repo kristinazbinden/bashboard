@@ -170,7 +170,7 @@ h2 {
 .newBtn {
     background-color: rgba(156,3,131,.6);
     padding: 5px;
-    margin: 10px 350px;
+    margin: 5% 35%;
     display: flex;
     justify-content: center;
 }
