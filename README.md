@@ -1,6 +1,8 @@
 # SEI-Project-2
 ## BashBoard App
 
+Deployed app: https://secret-peak-46206.herokuapp.com/
+
 A project management tool for the casual event planner. Break event planning into smaller tasks. Share with members of your team. Mark each task off as it is completed. Sit back and enjoy your event!
 
 ## User Stories
