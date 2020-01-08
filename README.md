@@ -17,6 +17,6 @@ This app used NodeJS, Mongoose, and Express to create a full stack CRUD app.
 
 It is deployed on Heroku, the database used is MongoDB, and the languages used are HTML, CSS (with Bootstrap), Javascript.
 
-#Credits
+# Credits
 
 Photos were taken from Unsplash and Pexels.
