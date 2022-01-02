@@ -1,5 +1,5 @@
-# SEI-Project-2
-## BashBoard App
+# BashBoard App
+## General Assembly SEI Project 2
 
 Deployed app: https://secret-peak-46206.herokuapp.com/
 
